@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEUS | Geleceğin Tarımı</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0f172a; 
+            --ag-green: #22c55e; 
+            --ag-orange: #f59e0b; 
+            --ag-blue: #3b82f6; 
+            --text-light: #f8fafc;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--bg-dark);
+            scroll-behavior: smooth;
+        }
+
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 90%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo { font-weight: 800; font-size: 1.8rem; letter-spacing: 2px; }
+        .logo span { color: var(--ag-green); }
+
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav ul li a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+        nav ul li a:hover { color: var(--ag-orange); }
+
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1594904351111-a072f80b1a71?auto=format&fit=crop&q=80&w=1920'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        header h1 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 10px; }
+        header h1 span { color: var(--ag-orange); }
+        header h2 { font-size: clamp(1.2rem, 3vw, 2rem); color: var(--ag-blue); margin-bottom: 20px; font-weight: 400; }
+        header p { font-size: 1.2rem; max-width: 800px; color: #cbd5e1; margin-bottom: 30px; }
+
+        section { padding: 100px 10%; }
+        
+        .mission-box {
+            background: var(--card-bg);
+            padding: 40px;
+            border-left: 5px solid var(--ag-green);
+            margin-bottom: 50px;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s ease;
+        }
+        .card:hover { border-color: var(--ag-blue); transform: translateY(-5px); }
+        .card i { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+
+        .sensor-tag {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--ag-blue);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            margin: 5px 2px;
+            border: 1px solid var(--ag-blue);
+        }
+
+        .target-highlight {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 50px;
+            border: 1px dashed var(--ag-green);
+        }
+
+        .btn {
+            background: var(--ag-orange);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #d97706; transform: scale(1.05); }
+
+        footer {
+            padding: 60px 10%;
+            text-align: center;
+            background: #020617;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .team-list { color: #94a3b8; font-size: 0.95rem; margin-top: 15px; }
+        .team-list strong { color: var(--text-light); }
+
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            section { padding: 60px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">TE<span>US</span></div>
+        <ul>
+            <li><a href="#vizyon">Vizyon</a></li>
+            <li><a href="#hedef">Hedefler</a></li>
+            <li><a href="#teknoloji">Teknoloji</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Merhaba, karşınızda <span>TEUS</span></h1>
+        <h2>Tarımda Erken Uyarı Sistemi</h2>
+        <p>Başta Armut olmak üzere meyve ve sebze yetiştiriciliğinde dijital dönüşümün öncüsü. Kanopi sıcaklığından toprak nemine, her detayı izliyoruz.</p>
+        <a href="#vizyon" class="btn">Sistemi Keşfet</a>
+    </header>
+
+    <section id="vizyon">
+        <div class="mission-box">
+            <h2 style="color: var(--ag-green);">Misyonumuz</h2>
+            <p>Bitki hastalıklarını ve meteorolojik olayları erken tespit ederek üreticilerin daha verimli, bilinçli ve sürdürülebilir tarım yapmasını sağlamak; geleceğin tarımını bugünden inşa ederek, çiftçilerin doğru zamanda doğru müdahaleyi yapmasını sağlayan akıllı sistemler geliştirmek ve tarımda dijital dönüşümü hızlandırmak.</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-chart-line" style="color: var(--ag-green);"></i>
+                <h3>Yüksek Rekolte</h3>
+                <p>Doğru veriyle beslenen ağaçlar, maksimum verimlilikle meyve verir. Veriye dayalı üretimle kazancınızı artırın.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-shield-virus" style="color: var(--ag-orange);"></i>
+                <h3>Minimum Zarar</h3>
+                <p>Don, kuraklık ve ani yağış gibi mali felaketleri henüz oluşmadan engelleyin, emeğinizi koruma altına alın.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="hedef" style="background: rgba(255,255,255,0.02);">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.5rem; color: var(--ag-orange);">Hedefimiz</h2>
+            <p style="max-width: 700px; margin: 0 auto; color: #cbd5e1;">Rekolteyi arttırmak, mali zararları minimuma indirmek ve çiftçinin sağlıklı tarım yapmasını sağlamak temel gayemizdir.</p>
+        </div>
+
+        <div class="target-highlight">
+            <h3 style="color: var(--ag-blue); font-size: 1.8rem;">Güvenli Gıda, Güvenli Yarınlar</h3>
+            <p style="font-size: 1.2rem; font-style: italic; color: #f1f5f9;">
+                "Üreticiden Tüketiciye 7'den 70'e herkesin mutlu olması demek, sürdürülebilir bir gelecek demektir."
+            </p>
+        </div>
+    </section>
+
+    <section id="teknoloji">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: var(--ag-blue);">Donanım Altyapısı</h2>
+            <p>ESP32 S3 Dev Kit ve ESP32S üzerinde koşan profesyonel sensör ağı</p>
+        </div>
+        
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-thermometer-half" style="color: var(--ag-orange);"></i>
+                <h3>Sıcaklık & Nem</h3>
+                <div class="sensor-tag">DHT22</div>
+                <div class="sensor-tag">BMP280 (Basınç)</div>
+                <p>Atmosferik verilerin hassas takibi ve hava basıncı analizi ile mikro-klima takibi.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-leaf" style="color: var(--ag-green);"></i>
+                <h3>Kanopi Analizi</h3>
+                <div class="sensor-tag">MLX GY-906 IR</div>
+                <p>Kızılötesi teknoloji ile doğrudan yaprak ve ağaç sıcaklığı ölçümü yaparak bitki stresini saptıyoruz.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-cloud-sun-rain" style="color: var(--ag-blue);"></i>
+                <h3>Çevresel Veriler</h3>
+                <div class="sensor-tag">Toprak Nem/Isı</div>
+                <div class="sensor-tag">Yağmur Sensörü</div>
+                <div class="sensor-tag">BH1750 (Işık)</div>
+                <p>Toprak durumu, ışık şiddeti ve yağış anlık olarak takip edilerek sisteme aktarılır.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-weight: bold; font-size: 1.2rem;">TEUS | Akıllı Tarım Çözümleri</p>
+        <p class="team-list">
+            <strong>Geliştiriciler:</strong><br>
+            Zafer Çekiç | Eylül Ela Yılmaz | Han İnceoğlu | Esma Koşa
+        </p>
+        <p style="color: var(--ag-green); margin-top: 10px; font-weight: 600;">Ondokuz Mayıs Üniversitesi (OMU) Ziraat Fakültesi</p>
+        <div style="margin-top: 20px; font-size: 0.8rem; color: #475569;">
+            &copy; 2026 Tüm Hakları Saklıdır.
+        </div>
+    </footer>
+
+</body>
+</html>
